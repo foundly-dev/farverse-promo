@@ -55,7 +55,12 @@ export default async function Home() {
 
         <div className="font-jersey flex flex-col space-y-4 pt-8 sm:flex-row sm:space-y-0 sm:space-x-6">
           {links.map((link) => (
-            <a href={link.href} target="_blank" rel="noopener noreferrer">
+            <a
+              href={link.href}
+              key={link.label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="w-36 uppercase">
                 <link.icon className="size-4" />
                 {link.label}
