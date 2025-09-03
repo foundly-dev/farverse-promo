@@ -41,6 +41,29 @@ export default async function Home() {
 
       <div className="absolute inset-0 bg-violet-950/50" />
 
+      <a
+        href="https://farcaster.xyz/mfbevan.eth"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute top-4 right-4 z-20 hidden sm:block"
+      >
+        <div className="bg-zinc-90 flex items-center space-x-3 rounded-lg bg-zinc-900 p-4 backdrop-blur-sm transition-all hover:scale-105 hover:bg-zinc-800">
+          <img
+            src="https://wrpcd.net/cdn-cgi/image/anim=false,fit=contain,f=auto,w=576/https%3A%2F%2Fi.imgur.com%2F4kjhzdW.jpg"
+            alt="mfbevan.eth profile"
+            className="h-12 w-12 rounded-full border-2 border-violet-300 shadow-lg"
+          />
+          <div className="flex flex-col items-start">
+            <span className="font-jersey text-lg leading-none font-semibold text-white">
+              mfbevan
+            </span>
+            <span className="font-jersey text-sm leading-none text-violet-200 uppercase">
+              @mfbevan.eth
+            </span>
+          </div>
+        </div>
+      </a>
+
       <div className="relative z-10 flex flex-col items-center text-center">
         <h1 className="font-jersey drop-shadow-box-black text-8xl font-bold text-white">
           FARVERSE
@@ -68,6 +91,29 @@ export default async function Home() {
             </a>
           ))}
         </div>
+
+        <a
+          href="https://farcaster.xyz/mfbevan.eth"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 block sm:hidden"
+        >
+          <div className="bg-zinc-90 flex items-center space-x-3 rounded-lg bg-zinc-900 p-4 backdrop-blur-sm transition-all hover:scale-105 hover:bg-zinc-800">
+            <img
+              src="https://wrpcd.net/cdn-cgi/image/anim=false,fit=contain,f=auto,w=576/https%3A%2F%2Fi.imgur.com%2F4kjhzdW.jpg"
+              alt="mfbevan.eth profile"
+              className="h-12 w-12 rounded-full border-2 border-violet-300 shadow-lg"
+            />
+            <div className="flex flex-col items-start">
+              <span className="font-jersey text-lg leading-none font-semibold text-white">
+                mfbevan
+              </span>
+              <span className="font-jersey text-sm leading-none text-violet-200 uppercase">
+                @mfbevan.eth
+              </span>
+            </div>
+          </div>
+        </a>
       </div>
     </main>
   );
