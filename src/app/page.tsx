@@ -9,6 +9,8 @@ import { Footer } from "./_components/home.footer";
 import { Apps } from "./_components/home.apps";
 import { Partners } from "./_components/home.partners";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = createMetadata({});
 
 export default async function Home() {
