@@ -1,11 +1,19 @@
 "use client";
-
-import { Card, CardContent, CardHeader } from "~/components/ui/card";
+import { sdk } from "@farcaster/miniapp-sdk";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "~/components/ui/card";
 import { cn } from "~/lib/utils";
 import { useToken } from "./home.hooks";
+import { Button } from "~/components/ui/button";
+import { Separator } from "~/components/ui/separator";
+import { ChartDialog } from "./home.chart-dialog";
 
 export const HomeToken = () => {
-  const [{ icon, symbol, price, tvl, priceChange }] = useToken();
+  const [{ icon, symbol, price, tvl, priceChange, address }] = useToken();
 
   const formatPrice = (price: number) => {
     if (price < 0.000001) {
@@ -36,10 +44,10 @@ export const HomeToken = () => {
   return (
     <Card
       className={cn(
-        "bg-card/10 border-border/50 dark mx-auto w-full max-w-sm backdrop-blur-md",
+        "bg-card/10 border-border/50 dark mx-auto w-full max-w-sm gap-2 backdrop-blur-md",
       )}
     >
-      <CardHeader className="pb-3">
+      <CardHeader>
         <div className="flex items-center gap-3">
           <div className="relative">
             <img
@@ -55,7 +63,7 @@ export const HomeToken = () => {
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-3">
+      <CardContent className="space-y-2">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-sm">Price</span>
@@ -89,6 +97,25 @@ export const HomeToken = () => {
           )}
         </div>
       </CardContent>
+
+      <Separator className="my-3" />
+
+      <CardFooter className="flex gap-4">
+        <ChartDialog>
+          <Button className="flex-1" variant="outline">
+            Chart
+          </Button>
+        </ChartDialog>
+        <Button
+          className="flex-1"
+          onClick={() => {
+            const token = `eip155:8453/erc20:${address}`;
+            void sdk.actions.viewToken({ token });
+          }}
+        >
+          Buy
+        </Button>
+      </CardFooter>
     </Card>
   );
 };

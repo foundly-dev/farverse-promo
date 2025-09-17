@@ -14,6 +14,7 @@ export const farverseRouter = createTRPCRouter({
       tvl,
       priceChange,
       icon: createAssetUrl("/logos/farverse_512.png"),
+      address: "0x2EE6Ae6DC51715b286bD20c623573759F4A24b07",
     };
   }),
 });
