@@ -10,17 +10,11 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-import { Geist, Jersey_15, VT323 } from "next/font/google";
+import { Geist, Jersey_15 } from "next/font/google";
 
 const jersey15 = Jersey_15({
   subsets: ["latin"],
   variable: "--font-jersey-15",
-  weight: ["400"],
-});
-
-const vt323 = VT323({
-  subsets: ["latin"],
-  variable: "--font-vt323",
   weight: ["400"],
 });
 
@@ -33,10 +27,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${geist.variable} ${jersey15.variable} ${vt323.variable}`}
-    >
+    <html lang="en" className={`dark ${geist.variable} ${jersey15.variable}`}>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
