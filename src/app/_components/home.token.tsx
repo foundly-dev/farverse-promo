@@ -13,7 +13,7 @@ import { Separator } from "~/components/ui/separator";
 import { ChartDialog } from "./home.chart-dialog";
 
 export const HomeToken = () => {
-  const [{ icon, symbol, price, tvl, priceChange, address }] = useToken();
+  const [{ icon, symbol, price, tvl, priceChange, token }] = useToken();
 
   const formatPrice = (price: number) => {
     if (price < 0.000001) {
@@ -109,7 +109,6 @@ export const HomeToken = () => {
         <Button
           className="flex-1"
           onClick={() => {
-            const token = `eip155:8453/erc20:${address}`;
             void sdk.actions.viewToken({ token });
           }}
         >
