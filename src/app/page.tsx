@@ -6,6 +6,8 @@ import { HomeToken } from "./_components/home.token";
 import { cn } from "~/lib/utils";
 import { api, HydrateClient } from "~/trpc/server";
 import { Footer } from "./_components/home.footer";
+import { Apps } from "./_components/home.apps";
+import { Partners } from "./_components/home.partners";
 
 export const metadata: Metadata = createMetadata({});
 
@@ -20,6 +22,8 @@ export default async function Home() {
         <HomeBackground />
         <HomeBanner />
         <HomeToken />
+        <Apps />
+        <Partners />
         <Footer />
       </HydrateClient>
     </main>

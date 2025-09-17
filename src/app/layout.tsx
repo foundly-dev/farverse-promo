@@ -2,7 +2,7 @@ import "~/styles/globals.css";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
-import { Geist, Jersey_15 } from "next/font/google";
+import { Geist, Jersey_15, Outfit } from "next/font/google";
 import { SetupFrame } from "~/components/farcaster/farcaster.frame";
 
 const jersey15 = Jersey_15({
@@ -11,16 +11,16 @@ const jersey15 = Jersey_15({
   weight: ["400"],
 });
 
-const geist = Geist({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-outfit",
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`dark ${geist.variable} ${jersey15.variable}`}>
+    <html lang="en" className={`dark ${outfit.variable} ${jersey15.variable}`}>
       <body>
         <TRPCReactProvider>
           <SetupFrame />

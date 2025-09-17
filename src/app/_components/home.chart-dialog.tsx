@@ -46,7 +46,7 @@ export function ChartDialog({
           </div>
           <Button
             variant="outline"
-            className="w-full"
+            className="w-full backdrop-blur-md"
             onClick={() => setOpen(false)}
           >
             Close

@@ -11,9 +11,10 @@ import { useToken } from "./home.hooks";
 import { Button } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import { ChartDialog } from "./home.chart-dialog";
+import { formatSmallPrice } from "~/lib/format";
 
 export const HomeToken = () => {
-  const [{ icon, symbol, price, tvl, priceChange, token }] = useToken();
+  const [{ icon, symbol, price, tvl, priceChange, token, name }] = useToken();
 
   const formatPrice = (price: number) => {
     if (price < 0.000001) {
@@ -44,7 +45,7 @@ export const HomeToken = () => {
   return (
     <Card
       className={cn(
-        "bg-card/10 border-border/50 dark mx-auto w-full max-w-sm gap-2 backdrop-blur-md",
+        "bg-card/10 mx-auto w-full max-w-sm gap-2 backdrop-blur-md",
       )}
     >
       <CardHeader>
@@ -58,7 +59,7 @@ export const HomeToken = () => {
           </div>
           <div>
             <h3 className="text-foreground text-lg font-bold">{symbol}</h3>
-            <p className="text-xs">Farverse</p>
+            <p className="text-xs">{name}</p>
           </div>
         </div>
       </CardHeader>
@@ -68,7 +69,7 @@ export const HomeToken = () => {
           <div className="flex items-center justify-between">
             <span className="text-sm">Price</span>
             <span className="text-foreground text-lg font-semibold">
-              ${formatPrice(price)}
+              {formatSmallPrice(price)}
             </span>
           </div>
 

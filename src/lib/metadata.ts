@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { createAssetUrl, createLiveUrl, farverseLogoImage } from "./url";
 
 export const defaultUrl = createLiveUrl("/");
-export const defaultTitle = "Slay to Earn";
-export const defaultDescription = "Slay Enemies. Earn Rewards.";
-export const defaultSubtitle = "Slay to Earn!";
+export const defaultTitle = "Farverse";
+export const defaultDescription = "Enter the Farverse";
+export const defaultSubtitle = "Enter the Farverse";
 export const defaultImagePath = createAssetUrl("/preview.png");
 export const defaultEmbedImage = createAssetUrl("/embed.png");
 export const defaultIconPath = farverseLogoImage("256");
 export const defaultSplashImage = farverseLogoImage("transparent");
-export const defaultImageAlt = "Slay to Earn";
+export const defaultImageAlt = "Farverse";
 export const defaultCanonicalUrl = defaultUrl;
-export const defaultKeywords = ["Slay", "Earn", "Tokens", "RPG"];
+export const defaultKeywords = ["Farverse", "games", "farpets", "democracy"];
 export const defaultTwitterCreator = "@0xmfbevan";
-export const defaultPublisher = "Slay to Earn";
-export const defaultApplicationName = "Slay to Earn";
+export const defaultPublisher = "Farverse";
+export const defaultApplicationName = "Farverse";
 export const defaultColor = "#1d0d28";
 
 export const createMetadata = (config: {

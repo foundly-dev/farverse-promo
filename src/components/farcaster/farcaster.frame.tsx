@@ -10,7 +10,9 @@ export const SetupFrame = () => {
     if (!isFrameSetup) {
       setIsFrameSetup(true);
       void sdk.actions.ready({ disableNativeGestures: false }).then(() => {
-        void sdk.actions.addMiniApp();
+        void sdk.actions.addMiniApp().catch(() => {
+          console.error("Failed to add mini app");
+        });
         void sdk.wallet.ethProvider;
       });
     }

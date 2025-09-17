@@ -9,7 +9,7 @@ export const HomeBanner = () => {
         className="h-full w-full object-contain"
       />
 
-      <span className="font-jersey text-center text-xl uppercase">
+      <span className="text-center text-sm font-bold uppercase">
         An Onchain Gaming Universe
       </span>
     </div>
