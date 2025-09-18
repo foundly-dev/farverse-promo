@@ -15,9 +15,9 @@ export async function GET() {
     accountAssociation: {
       header:
         "eyJmaWQiOjM4NTY1MSwidHlwZSI6ImF1dGgiLCJrZXkiOiIweGJDZTFmZEQ2QzU3ZDdFRWZiNjMxMTg0NTRiNjEzZjhjMzBhQzQ0QTUifQ",
-      payload: "eyJkb21haW4iOiJzbGF5LmZhcnZlcnNlLmdhbWVzIn0",
+      payload: "eyJkb21haW4iOiJmYXJ2ZXJzZS5nYW1lcyJ9",
       signature:
-        "791EM5EvknEOd8Di18ijn3kXC3PbXEw3MykOGcLg3mZj3bha0Wh2r2MWkMliY4fMGVqciFECJj02MFS/6RYEfhw=",
+        "vhGjD+Hgmw1/8VrQRMB9d3usf0giZxEy3cF8rnQRRi1XZ8DrN0+lyn5i3W28UzkxWkbAYRxQCjg/6vnZzAJJiBs=",
     },
     baseBuilder: {
       allowedAddresses: ["0xeAbEc05d7c47EFf16c279d9091F4008324c693cC"],
