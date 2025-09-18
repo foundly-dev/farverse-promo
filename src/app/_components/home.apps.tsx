@@ -17,7 +17,7 @@ import { icons } from "~/services/image.service";
 
 export const Apps = () => {
   return (
-    <div className="flex flex-col pt-2">
+    <div className="flex flex-col pt-4">
       <h3 className="pl-2 text-2xl font-bold">
         <Gamepad2 className="mr-1 inline-block size-5 -translate-y-0.5" />{" "}
         Farverse Games
@@ -36,9 +36,7 @@ export const Apps = () => {
         />{" "}
         Socials
       </h3>
-      <p className="pl-2 text-xs">
-        Follow on Farcaster to stay up to date, and Join the Farverse Empire
-      </p>
+      <p className="pl-2 text-xs">Follow to to stay up to date</p>
       <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
         {socials.map((item) => (
           <ContentItem key={item.title} item={item} />
