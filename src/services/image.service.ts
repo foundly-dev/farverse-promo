@@ -10,3 +10,14 @@ export const createAssetUrl = (url: string) => {
   _url.pathname = `/${DIRECTORY}/${url.startsWith("/") ? url.slice(1) : url}`;
   return _url.toString();
 };
+
+export const icons = {
+  uniswap: createAssetUrl("/icons/uniswap.png"),
+  clanker: createAssetUrl("/icons/clanker.png"),
+  dexscreener: createAssetUrl("/icons/dexscreener.webp"),
+  farcaster: createAssetUrl("/icons/farcaster_white.png"),
+  magicEden: createAssetUrl("/icons/magiceden.jpg"),
+  basescan: createAssetUrl("/icons/basescan_new.png"),
+  zora: createAssetUrl("/icons/zora.png"),
+  empire: createAssetUrl("/icons/empire.webp"),
+};

@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import {
-  createAssetUrl,
-  createLiveUrl,
-  farverseLogoImage,
-} from "./image.service";
+import { createAssetUrl, createLiveUrl, farverseLogoImage } from "./url";
 
 export const defaultUrl = createLiveUrl("/");
 export const defaultTitle = "Farverse";
-export const defaultDescription =
-  "An onchain gaming universe. Built on Farcaster";
+export const defaultDescription = "Enter the Farverse";
 export const defaultSubtitle = "Enter the Farverse";
 export const defaultImagePath = createAssetUrl("/preview.png");
 export const defaultEmbedImage = createAssetUrl("/embed.png");

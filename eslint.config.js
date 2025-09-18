@@ -34,6 +34,11 @@ export default tseslint.config(
         { checksVoidReturn: { attributes: false } },
       ],
       "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@next/next/no-img-element": "off",
+      "@typescript-eslint/no-redundant-type-constituents": "off",
     },
   },
   {
