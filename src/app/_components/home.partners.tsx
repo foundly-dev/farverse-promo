@@ -9,12 +9,16 @@ import {
   DrawerTrigger,
 } from "~/components/ui/drawer";
 import { PartnerLinkComponent } from "~/components/ui/partner-link";
+import { Landmark } from "lucide-react";
 
 export const Partners = () => {
   return (
     <div className="flex flex-col pt-6">
-      <h3 className="pl-2 text-2xl font-bold">Ecosystem Partners</h3>
-      <p className="pl-2 text-sm">
+      <h3 className="pl-2 text-2xl font-bold">
+        <Landmark className="mr-2 inline-block size-5 -translate-y-0.5" />
+        Partners
+      </h3>
+      <p className="pl-2 text-xs">
         The Farverse is bigger than just its games. These are some of the
         awesome people and projects that we&apos;re working with.
       </p>
@@ -30,7 +34,7 @@ export const Partners = () => {
                     className="h-full w-full object-contain"
                   />
                 </div>
-                <span className="line-clamp-1 text-center text-sm font-medium">
+                <span className="line-clamp-1 text-center text-xs font-medium">
                   {item.title}
                 </span>
               </button>

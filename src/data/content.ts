@@ -14,7 +14,7 @@ export interface ContentItem {
   onMiniAppClick: () => void;
 }
 
-export const content: ContentItem[] = [
+export const apps: ContentItem[] = [
   {
     title: "Slay to Earn",
     subtitle: "Slay Enemies. Earn Rewards.",
@@ -126,7 +126,9 @@ export const content: ContentItem[] = [
       void sdk.actions.openMiniApp({ url: "https://democracyga.me" });
     },
   },
+];
 
+export const socials: ContentItem[] = [
   {
     title: "mfbevan.eth",
     subtitle: "Developer",
@@ -174,4 +176,3 @@ export const content: ContentItem[] = [
     },
   },
 ];
-export type Content = (typeof content)[number];

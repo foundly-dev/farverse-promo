@@ -9,6 +9,7 @@ import {
   createUniswapCoinLink,
   createDexScreenerCoinLink,
   createZoraCoinLink,
+  createEmpireBuilderCoinLink,
 } from "~/services/linker.service";
 
 export const TokenLinks = ({
@@ -49,6 +50,13 @@ export const TokenLinks = ({
       name: "DexScreener",
       href: createDexScreenerCoinLink({ address: token.address }),
       icon: icons.dexscreener,
+      hoverClass: "hover:!bg-zinc-500/20",
+      enabled: true,
+    },
+    {
+      name: "Empire Builder",
+      href: createEmpireBuilderCoinLink({ address: token.address }),
+      icon: icons.empire,
       hoverClass: "hover:!bg-zinc-500/20",
       enabled: true,
     },

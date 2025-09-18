@@ -122,3 +122,9 @@ export const createOpenSeaLink = ({
 
   return `https://opensea.io/assets/${name?.toLowerCase()}/${address}/${tokenId}`;
 };
+
+export const createEmpireBuilderCoinLink = ({
+  address,
+}: CreateCoinLinkProps) => {
+  return `https://www.empirebuilder.world/empire/${address}`;
+};

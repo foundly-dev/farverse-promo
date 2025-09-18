@@ -17,6 +17,7 @@ export const icons = {
   dexscreener: createAssetUrl("/icons/dexscreener.webp"),
   farcaster: createAssetUrl("/icons/farcaster_white.png"),
   magicEden: createAssetUrl("/icons/magiceden.jpg"),
-  basescan: createAssetUrl("/icons/basescan.png"),
+  basescan: createAssetUrl("/icons/basescan_new.png"),
   zora: createAssetUrl("/icons/zora.png"),
+  empire: createAssetUrl("/icons/empire.webp"),
 };

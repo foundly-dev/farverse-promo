@@ -11,13 +11,7 @@ import { Separator } from "~/components/ui/separator";
 import { ChartDialog } from "./home.chart-dialog";
 import { formatSmallPrice, formatMarketCap } from "~/lib/format";
 import { useIsMiniApp } from "~/components/farcaster/farcaster.hooks";
-import { ChartCandlestick } from "lucide-react";
-import Link from "next/link";
-import {
-  createDexScreenerCoinLink,
-  createUniswapCoinLink,
-} from "~/services/linker.service";
-import { icons } from "~/services/image.service";
+
 import { TokenLinks } from "~/components/ui/token.links";
 
 export const HomeToken = () => {
