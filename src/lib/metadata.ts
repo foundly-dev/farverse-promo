@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
-import { createAssetUrl } from "~/services/image.service";
+import {
+  createAssetUrl,
+  createLiveUrl,
+  farverseLogoImage,
+} from "./image.service";
 
-export const defaultUrl = "/";
+export const defaultUrl = createLiveUrl("/");
 export const defaultTitle = "Farverse";
 export const defaultDescription =
-  "An onchain gaming universe built on Farcaster";
-export const defaultSubtitle = "Built on Farcaster";
-export const defaultImagePath = createAssetUrl("/fv_preview.png");
+  "An onchain gaming universe. Built on Farcaster";
+export const defaultSubtitle = "Enter the Farverse";
+export const defaultImagePath = createAssetUrl("/preview.png");
 export const defaultEmbedImage = createAssetUrl("/embed.png");
-export const defaultIconPath = createAssetUrl("/logo/logo_256.png");
+export const defaultIconPath = farverseLogoImage("256");
+export const defaultSplashImage = farverseLogoImage("transparent");
 export const defaultImageAlt = "Farverse";
 export const defaultCanonicalUrl = defaultUrl;
-export const defaultKeywords = ["Farverse", "Farcaster", "Onchain", "Gaming"];
+export const defaultKeywords = ["Farverse", "games", "farpets", "democracy"];
 export const defaultTwitterCreator = "@0xmfbevan";
 export const defaultPublisher = "Farverse";
 export const defaultApplicationName = "Farverse";
@@ -42,6 +47,7 @@ export const createMetadata = (config: {
   } = config;
 
   return {
+    metadataBase: new URL(canonicalUrl),
     title: {
       default: defaultTitle,
       template: `%s | ${defaultTitle}`,
@@ -103,6 +109,22 @@ export const createMetadata = (config: {
     },
     formatDetection: {
       telephone: false,
+    },
+    other: {
+      "fc:frame": JSON.stringify({
+        version: "next",
+        imageUrl: defaultEmbedImage,
+        button: {
+          title: `Enter the Farverse!`,
+          action: {
+            type: "launch_frame",
+            name: "Farverse",
+            url: defaultCanonicalUrl,
+            splashImageUrl: defaultSplashImage,
+            splashBackgroundColor: defaultColor,
+          },
+        },
+      }),
     },
   };
 };
