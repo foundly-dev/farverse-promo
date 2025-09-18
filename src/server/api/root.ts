@@ -1,5 +1,5 @@
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
-import { farverseRouter } from "./routers/farverse";
+import { farverseRouter } from "./routers/farverse/_farverse.router";
 
 /**
  * This is the primary router for your server.

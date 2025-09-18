@@ -1,4 +1,4 @@
-import { formatNumber, toEther } from "thirdweb/utils";
+import { formatNumber, shortenLargeNumber, toEther } from "thirdweb/utils";
 
 export const formatPrice = (price?: string | number) => {
   return Number(price ?? 0).toLocaleString("en-US", {
@@ -45,4 +45,10 @@ export const formatSmallPrice = (price?: string | number, totalLength = 8) => {
 export const formatBigIntToEtherString = (amount?: bigint) => {
   if (!amount) return "0";
   return formatNumber(Number(toEther(amount)), 0).toLocaleString("en-US", {});
+};
+
+export const formatMarketCap = (marketCap?: string | number) => {
+  const num = Number(marketCap ?? 0);
+
+  return `$${shortenLargeNumber(num)} MC`;
 };

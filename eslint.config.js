@@ -38,6 +38,7 @@ export default tseslint.config(
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-member-access": "off",
       "@next/next/no-img-element": "off",
+      "@typescript-eslint/no-redundant-type-constituents": "off",
     },
   },
   {

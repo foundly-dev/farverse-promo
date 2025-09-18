@@ -12,6 +12,7 @@ import { ImageCarousel } from "~/components/ui/image-carousel";
 import { Button } from "~/components/ui/button";
 import { useIsMiniApp } from "~/components/farcaster/farcaster.hooks";
 import { cn } from "~/lib/utils";
+import { ExternalLink } from "lucide-react";
 
 export const Apps = () => {
   const [isMiniApp] = useIsMiniApp();
@@ -81,7 +82,7 @@ export const Apps = () => {
                     className="w-full"
                     onClick={isMiniApp ? item.onMiniAppClick : item.onClick}
                   >
-                    {item.action}
+                    {item.action} <ExternalLink className="size-4" />
                   </Button>
                 </div>
 

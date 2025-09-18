@@ -1,116 +1,117 @@
 "use client";
+
 import { sdk } from "@farcaster/miniapp-sdk";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "~/components/ui/card";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Card, CardFooter, CardHeader } from "~/components/ui/card";
 import { cn } from "~/lib/utils";
 import { useToken } from "./home.hooks";
 import { Button } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
 import { ChartDialog } from "./home.chart-dialog";
-import { formatSmallPrice } from "~/lib/format";
+import { formatSmallPrice, formatMarketCap } from "~/lib/format";
+import { useIsMiniApp } from "~/components/farcaster/farcaster.hooks";
+import { ChartCandlestick } from "lucide-react";
+import Link from "next/link";
+import {
+  createDexScreenerCoinLink,
+  createUniswapCoinLink,
+} from "~/services/linker.service";
+import { icons } from "~/services/image.service";
+import { TokenLinks } from "~/components/ui/token.links";
 
 export const HomeToken = () => {
-  const [{ icon, symbol, price, tvl, priceChange, token, name }] = useToken();
+  const [isInMiniApp] = useIsMiniApp();
+  const [
+    { icon, symbol, price, marketCap, address, priceChange, token, name },
+  ] = useToken();
 
-  const formatPrice = (price: number) => {
-    if (price < 0.000001) {
-      return price.toExponential(2);
-    }
-    if (price < 0.01) {
-      return price.toFixed(6);
-    }
-    if (price < 1) {
-      return price.toFixed(4);
-    }
-    return price.toFixed(2);
-  };
+  const [showPrice, setShowPrice] = useState(true);
 
-  const formatTVL = (tvl: number) => {
-    if (tvl >= 1e9) {
-      return `$${(tvl / 1e9).toFixed(1)}B`;
-    }
-    if (tvl >= 1e6) {
-      return `$${(tvl / 1e6).toFixed(1)}M`;
-    }
-    if (tvl >= 1e3) {
-      return `$${(tvl / 1e3).toFixed(1)}K`;
-    }
-    return `$${tvl.toFixed(0)}`;
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowPrice((prev) => !prev);
+    }, 5000); // Switch every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Card
       className={cn(
-        "bg-card/10 mx-auto w-full max-w-sm gap-2 backdrop-blur-md",
+        "bg-card/10 mx-auto w-full max-w-sm gap-2 pt-5 pb-4 backdrop-blur-md",
       )}
     >
-      <CardHeader>
-        <div className="flex items-center gap-3">
-          <div className="relative">
-            <img
-              src={icon}
-              alt={`${symbol} token icon`}
-              className="h-10 w-10 rounded-full object-cover"
-            />
+      <CardHeader className="px-5">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <img
+                src={icon}
+                alt={`${symbol} token icon`}
+                className="h-10 w-10 rounded-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="text-foreground text-lg leading-tight font-bold">
+                {symbol}
+              </h3>
+              <p className="text-xs leading-tight opacity-80">{name}</p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-foreground text-lg font-bold">{symbol}</h3>
-            <p className="text-xs">{name}</p>
+
+          <div className="flex flex-col items-end justify-self-end">
+            <span
+              className={cn(
+                "text-xs leading-tight font-medium",
+                priceChange >= 0 ? "text-lime-500" : "text-rose-500",
+              )}
+            >
+              {priceChange >= 0 ? "+" : ""}
+              {priceChange.toFixed(2)}%
+            </span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={showPrice ? "price" : "marketcap"}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="text-foreground text-lg leading-tight font-semibold"
+              >
+                {showPrice
+                  ? formatSmallPrice(price) || "$0.00"
+                  : formatMarketCap(marketCap) || "$0"}
+              </motion.span>
+            </AnimatePresence>
           </div>
+        </div>
+
+        <div className="flex justify-end gap-2">
+          <TokenLinks token={{ address, type: "clanker" }} />
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-2">
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="text-sm">Price</span>
-            <span className="text-foreground text-lg font-semibold">
-              {formatSmallPrice(price)}
-            </span>
-          </div>
+      <Separator className="mt-1 mb-2" />
 
-          {priceChange !== undefined && (
-            <div className="flex items-center justify-between">
-              <span className="text-sm">24h Change</span>
-              <span
-                className={cn(
-                  "text-sm font-medium",
-                  priceChange >= 0 ? "text-green-600" : "text-red-600",
-                )}
-              >
-                {priceChange >= 0 ? "+" : ""}
-                {priceChange.toFixed(2)}%
-              </span>
-            </div>
-          )}
-
-          {tvl && (
-            <div className="flex items-center justify-between">
-              <span className="text-sm">TVL</span>
-              <span className="text-foreground text-sm font-medium">
-                {formatTVL(tvl)}
-              </span>
-            </div>
-          )}
-        </div>
-      </CardContent>
-
-      <Separator className="my-3" />
-
-      <CardFooter className="flex gap-4">
+      <CardFooter className="flex gap-4 px-4">
         <ChartDialog>
-          <Button className="flex-1" variant="outline">
+          <Button variant="outline" className="flex-1">
             Chart
           </Button>
         </ChartDialog>
+
         <Button
           className="flex-1"
           onClick={() => {
-            void sdk.actions.viewToken({ token });
+            if (isInMiniApp) {
+              void sdk.actions.viewToken({ token });
+            } else {
+              void window.open(
+                `https://app.uniswap.org/explore/tokens/base/${address}`,
+                "_blank",
+              );
+            }
           }}
         >
           Buy
