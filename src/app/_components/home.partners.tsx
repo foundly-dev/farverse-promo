@@ -48,18 +48,25 @@ export const Partners = () => {
                     className="size-16 rounded-lg border object-contain"
                   />
                   <div className="flex flex-col">
-                    <DrawerTitle className="text-2xl font-bold">
+                    <DrawerTitle className="text-left text-2xl font-bold">
                       {item.title}
                     </DrawerTitle>
-                    <div className="flex items-center space-x-1">
-                      <img
-                        src={item.owner.avatar}
-                        alt={item.owner.username}
-                        className="size-5 rounded-full"
-                      />
-                      <span className="text-base font-medium">
-                        {item.owner.username}
-                      </span>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {item.owners.map((owner, index) => (
+                        <div
+                          key={owner.fid}
+                          className="flex items-center space-x-1"
+                        >
+                          <img
+                            src={owner.avatar}
+                            alt={owner.username}
+                            className="size-5 rounded-full"
+                          />
+                          <span className="text-base font-medium">
+                            {owner.username}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
