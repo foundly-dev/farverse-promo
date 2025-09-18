@@ -22,11 +22,13 @@ export default async function Home() {
     >
       <HydrateClient>
         <HomeBackground />
-        <HomeBanner />
-        <HomeToken />
-        <Apps />
-        <Partners />
-        <Footer />
+        <div className="flex max-w-sm flex-col items-center">
+          <HomeBanner />
+          <HomeToken />
+          <Apps />
+          <Partners />
+          <Footer />
+        </div>
       </HydrateClient>
     </main>
   );

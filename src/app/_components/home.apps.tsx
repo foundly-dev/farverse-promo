@@ -23,7 +23,7 @@ export const Apps = () => {
         Farverse Games
       </h3>
       <p className="pl-2 text-xs">One Universe. Many Games.</p>
-      <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3 md:grid-cols-5">
+      <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
         {apps.map((item) => (
           <ContentItem key={item.title} item={item} />
         ))}
@@ -39,7 +39,7 @@ export const Apps = () => {
       <p className="pl-2 text-xs">
         Follow on Farcaster to stay up to date, and Join the Farverse Empire
       </p>
-      <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3 md:grid-cols-5">
+      <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
         {socials.map((item) => (
           <ContentItem key={item.title} item={item} />
         ))}
@@ -88,20 +88,18 @@ const ContentItem = ({ item }: { item: (typeof apps)[number] }) => {
           {item.stats && item.stats.length > 0 && (
             <div className="flex">
               {item.stats.map((stat) => (
-                <>
-                  <div
-                    key={stat.label}
-                    className={cn("flex w-full flex-col items-center")}
-                  >
-                    <span className="text-center text-lg font-bold">
-                      {stat.value}
-                    </span>
+                <div
+                  key={stat.label}
+                  className={cn("flex w-full flex-col items-center")}
+                >
+                  <span className="text-center text-lg font-bold">
+                    {stat.value}
+                  </span>
 
-                    <span className="text-muted-foreground text-center text-xs font-medium">
-                      {stat.label}
-                    </span>
-                  </div>
-                </>
+                  <span className="text-muted-foreground text-center text-xs font-medium">
+                    {stat.label}
+                  </span>
+                </div>
               ))}
             </div>
           )}

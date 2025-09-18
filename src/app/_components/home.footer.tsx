@@ -16,8 +16,8 @@ const copyright = {
 export const Footer = () => {
   return (
     <footer className="w-full">
-      <div className="mt-6 border-t pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
-        <div className="mt-6 lg:col-[4/11] lg:mt-0">
+      <div className="mt-6 border-t pt-6">
+        <div className="mt-6">
           <ul className="-mx-3 -my-1 flex list-none justify-center">
             {legalLinks.map((link, i) => (
               <li key={i} className="mx-3 my-1 shrink-0">

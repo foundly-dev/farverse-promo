@@ -22,7 +22,7 @@ export const Partners = () => {
         The Farverse is bigger than just its games. These are some of the
         awesome people and projects that we&apos;re working with.
       </p>
-      <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3 md:grid-cols-5">
+      <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
         {partners.map((item) => (
           <Drawer key={item.title}>
             <DrawerTrigger asChild>
