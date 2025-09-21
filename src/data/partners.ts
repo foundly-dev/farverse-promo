@@ -330,29 +330,29 @@ export const partners: Partner[] = [
       },
     ],
   },
-  {
-    title: "Foundly Labs",
-    description:
-      "At Foundly Labs, our mission is to empower creators and users with cutting-edge software solutions. We are committed to pioneering visionary ideas through innovative technology, expert craftsmanship, and unwavering dedication.",
-    image: "https://foundly.dev/logo.svg",
-    owners: [
-      {
-        fid: 385651,
-        username: "mfbevan.eth",
-        avatar: "https://i.imgur.com/4kjhzdW.jpg",
-      },
-    ],
-    links: [
-      {
-        type: "x",
-        label: "Follow on X",
-        url: "https://x.com/foundlylabs",
-      },
-      {
-        type: "website",
-        label: "Visit Website",
-        url: "https://foundly.dev/",
-      },
-    ],
-  },
+  // {
+  //   title: "Foundly Labs",
+  //   description:
+  //     "At Foundly Labs, our mission is to empower creators and users with cutting-edge software solutions. We are committed to pioneering visionary ideas through innovative technology, expert craftsmanship, and unwavering dedication.",
+  //   image: "https://foundly.dev/logo.svg",
+  //   owners: [
+  //     {
+  //       fid: 385651,
+  //       username: "mfbevan.eth",
+  //       avatar: "https://i.imgur.com/4kjhzdW.jpg",
+  //     },
+  //   ],
+  //   links: [
+  //     {
+  //       type: "x",
+  //       label: "Follow on X",
+  //       url: "https://x.com/foundlylabs",
+  //     },
+  //     {
+  //       type: "website",
+  //       label: "Visit Website",
+  //       url: "https://foundly.dev/",
+  //     },
+  //   ],
+  // },
 ];

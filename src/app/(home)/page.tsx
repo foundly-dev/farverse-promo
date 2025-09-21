@@ -22,7 +22,7 @@ export default async function Home() {
     >
       <HydrateClient>
         <HomeBackground />
-        <div className="flex max-w-sm flex-col items-center">
+        <div className="flex max-w-sm flex-col items-center md:max-w-screen-lg">
           <HomeBanner />
           <HomeToken />
           <Apps />

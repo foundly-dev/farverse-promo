@@ -39,7 +39,7 @@ export const HomeToken = () => {
       <CardHeader className="px-5">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="relative">
+            <div className="relative rounded-full border">
               <img
                 src={icon}
                 alt={`${symbol} token icon`}

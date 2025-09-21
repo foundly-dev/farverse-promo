@@ -17,33 +17,38 @@ import { icons } from "~/services/image.service";
 
 export const Apps = () => {
   return (
-    <div className="flex flex-col pt-4">
-      <h3 className="pl-2 text-2xl font-bold">
-        <Gamepad2 className="mr-1 inline-block size-5 -translate-y-0.5" />{" "}
-        Farverse Games
-      </h3>
-      <p className="pl-2 text-xs">One Universe. Many Games.</p>
-      <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
-        {apps.map((item) => (
-          <ContentItem key={item.title} item={item} />
-        ))}
+    <div className="md: flex flex-col pt-4 pt-8 md:flex-row md:gap-8">
+      <div className="flex flex-col md:w-1/2">
+        <h3 className="pl-2 text-2xl font-bold">
+          <Gamepad2 className="mr-1 inline-block size-5 -translate-y-0.5" />{" "}
+          Farverse Games
+        </h3>
+        <p className="pl-2 text-xs">One Universe. Many Games.</p>
+
+        <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
+          {apps.map((item) => (
+            <ContentItem key={item.title} item={item} />
+          ))}
+        </div>
       </div>
-      <h3 className="pt-4 pl-2 text-2xl font-bold">
-        <img
-          src={icons.farcaster}
-          alt="Farcaster"
-          className="mr-1 inline-block size-5 -translate-y-0.5"
-        />{" "}
-        Community
-      </h3>
-      <p className="pl-2 text-xs">
-        Follow to to stay up to date and join the Farverse Empire to earn
-        rewards!
-      </p>
-      <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
-        {socials.map((item) => (
-          <ContentItem key={item.title} item={item} />
-        ))}
+      <div className="flex flex-col md:w-1/2">
+        <h3 className="pt-4 pl-2 text-2xl font-bold md:pt-0">
+          <img
+            src={icons.farcaster}
+            alt="Farcaster"
+            className="mr-1 inline-block size-5 -translate-y-0.5"
+          />{" "}
+          Community
+        </h3>
+        <p className="pl-2 text-xs">
+          Follow to to stay up to date and join the Farverse Empire to earn
+          rewards!
+        </p>
+        <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
+          {socials.map((item) => (
+            <ContentItem key={item.title} item={item} />
+          ))}
+        </div>
       </div>
     </div>
   );
