@@ -160,19 +160,19 @@ export const socials: ContentItem[] = [
       void sdk.actions.openUrl("https://farcaster.xyz/~/channel/farverse");
     },
   },
-  // {
-  //   title: "Farverse",
-  //   subtitle: "Farverse Empire",
-  //   description:
-  //     "Join the Farverse Empire in Empire Builder to see where you rank on the Farverse leaderboards, and earn rewards for your contributions.",
-  //   image: "https://www.empirebuilder.world/EBblackjpg2.jpg",
-  //   screenshots: [],
-  //   action: "Join the Empire",
-  //   onClick: () => {
-  //     void window.open("https://www.empirebuilder.world/", "_blank");
-  //   },
-  //   onMiniAppClick: () => {
-  //     void sdk.actions.openUrl("https://www.empirebuilder.world/");
-  //   },
-  // },
+  {
+    title: "Empire",
+    subtitle: "Farverse Empire",
+    description:
+      "Join the Farverse Empire in Empire Builder to see where you rank on the Farverse leaderboards, and earn rewards for your contributions.",
+    image: "https://www.empirebuilder.world/EBblackjpg2.jpg",
+    screenshots: [],
+    action: "Join the Empire",
+    onClick: () => {
+      void window.open("https://www.empirebuilder.world/", "_blank");
+    },
+    onMiniAppClick: () => {
+      void sdk.actions.openUrl("https://www.empirebuilder.world/");
+    },
+  },
 ];

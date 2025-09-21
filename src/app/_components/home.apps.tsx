@@ -34,9 +34,12 @@ export const Apps = () => {
           alt="Farcaster"
           className="mr-1 inline-block size-5 -translate-y-0.5"
         />{" "}
-        Socials
+        Community
       </h3>
-      <p className="pl-2 text-xs">Follow to to stay up to date</p>
+      <p className="pl-2 text-xs">
+        Follow to to stay up to date and join the Farverse Empire to earn
+        rewards!
+      </p>
       <div className="grid grid-cols-3 gap-6 pt-4 sm:grid-cols-3">
         {socials.map((item) => (
           <ContentItem key={item.title} item={item} />

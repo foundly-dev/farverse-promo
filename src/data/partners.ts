@@ -1,3 +1,5 @@
+import { m } from "framer-motion";
+
 // Link types for the dynamic links system
 export type LinkType =
   | "farcaster"
@@ -31,6 +33,98 @@ export interface Partner {
 }
 
 export const partners: Partner[] = [
+  {
+    title: "Empire Builder",
+    description:
+      "The ultimate tool for Utility-pilling your tokens. Distribute rewards, perform airdrops, and raffle prizes to your token holders in just a few clicks.",
+    image: "https://www.empirebuilder.world/EBblackjpg2.jpg",
+    owners: [
+      {
+        fid: 409857,
+        username: "yerbearserker",
+        avatar:
+          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2e2e66dd-30c0-4b05-5a05-163fc8dbec00/original",
+      },
+      {
+        fid: 369863,
+        username: "diviflyy",
+        avatar:
+          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/68486cbd-1549-4c14-f092-bdcbcfc1d900/original",
+      },
+    ],
+    links: [
+      {
+        type: "miniapp",
+        label: "Empire Builder",
+        url: "https://www.empirebuilder.world/",
+        miniappUrl: "https://www.empirebuilder.world/",
+      },
+      {
+        type: "farcaster",
+        label: "yerbearserker",
+        url: "https://farcaster.xyz/yerbearserker",
+        fid: 409857,
+      },
+      {
+        type: "farcaster",
+        label: "diviflyy",
+        url: "https://farcaster.xyz/diviflyy",
+        fid: 369863,
+      },
+      {
+        type: "empire",
+        label: "Glanker Empire",
+        url: "https://www.empirebuilder.world/empire/0x33ac788bc9ccb27e9ec558fb2bde79950a6b9d5b",
+      },
+    ],
+  },
+  {
+    title: "World of PANGEA",
+    description:
+      "Enter a realm where ancient kingdoms clash with mystical forces, and legends are forged in the crucible of war and magic. This immersive medieval fantasy universe brings together epic storytelling, rich lore, and cutting-edge blockchain technology. Discover kingdoms, heroes, and dark secrets in a world where every tale becomes part of the onchain legend, and where the community shapes the destiny of entire civilizations.",
+    image:
+      "https://proxy.wrpcd.net/?url=https%3A%2F%2Fworldofpangea.io%2Fimages%2Ficon.png&s=f14e531602bdca13113c50f85d39e537aa02d6f20d9cae39fe7d536c5587ac9a",
+    owners: [
+      {
+        fid: 409857,
+        username: "yerbearserker",
+        avatar:
+          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2e2e66dd-30c0-4b05-5a05-163fc8dbec00/original",
+      },
+      {
+        fid: 1112538,
+        username: "mikesmillerart",
+        avatar:
+          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/00099246-fdec-4872-3b57-92769e88e600/original",
+      },
+    ],
+    links: [
+      {
+        type: "miniapp",
+        label: "World of PANGEA",
+        url: "https://farcaster.xyz/miniapps/D7I4i18BoQw7/world-of-pangea",
+        miniappUrl:
+          "https://farcaster.xyz/miniapps/D7I4i18BoQw7/world-of-pangea",
+      },
+      {
+        type: "farcaster",
+        label: "mikesmillerart",
+        url: "https://farcaster.xyz/mikesmillerart",
+        fid: 1112538,
+      },
+      {
+        type: "farcaster",
+        label: "yerbearserker",
+        url: "https://farcaster.xyz/yerbearserker",
+        fid: 409857,
+      },
+      {
+        type: "empire",
+        label: "PANGEA Empire",
+        url: "https://www.empirebuilder.world/empire/0xD8b399e0Fc958B12Cb7841480E6054a30d674b07",
+      },
+    ],
+  },
   {
     title: "Master Grief",
     description:
@@ -73,6 +167,94 @@ export const partners: Partner[] = [
         type: "empire",
         label: "Empire Builder",
         url: "https://www.empirebuilder.world/empire/0x1dE745837bb0564f3aD1b43ce7BcF8924f5B6b07",
+      },
+    ],
+  },
+  {
+    title: "BizarreBeasts",
+    description:
+      "BizarreBeasts is a notorious, art-powered ecosystem featuring hand-illustrated characters, animations, NFTs, and web3 games! With 8 games played over 140,000 times and achieving #1 trending on Remix and TheBaseApp, BizarreBeasts has built a notorious community of 4,400+ token holders GOING BIZARRE.",
+    image:
+      "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/6f2cca88-a12a-4b50-8e70-08d7a8fd7c00/original",
+    owners: [
+      {
+        fid: 357897,
+        username: "bizarrebeast",
+        avatar:
+          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/6f2cca88-a12a-4b50-8e70-08d7a8fd7c00/original",
+      },
+    ],
+    links: [
+      {
+        type: "channel",
+        label: "Farcaster $BB Community",
+        url: "https://farcaster.xyz/~/channel/bizarrebeasts",
+      },
+      {
+        type: "channel",
+        label: "Farcaster $BB Art",
+        url: "https://farcaster.xyz/~/channel/bizarrebeastsart",
+      },
+      {
+        type: "x",
+        label: "Follow on X",
+        url: "https://x.com/bizarrebeasts_",
+      },
+      {
+        type: "miniapp",
+        label: "BizarreBeasts Miniapp",
+        url: "https://bbapp.bizarrebeasts.io",
+        miniappUrl: "https://bbapp.bizarrebeasts.io",
+      },
+      {
+        type: "empire",
+        label: "$BB Empire",
+        url: "https://empire/empire.bizarrebeasts.io",
+      },
+      {
+        type: "website",
+        label: "Highlight",
+        url: "https://highlight.xyz/user/@bizarrebeasts.eth",
+      },
+      {
+        type: "website",
+        label: "VibeMarket",
+        url: "https://vibechain.com/market/bizarrebeasts?ref=BJT4EJBY0SJP&pnlId=6b6e45fc",
+      },
+      {
+        type: "website",
+        label: "Treasure Quest",
+        url: "https://treasure-quest.remix.gg",
+      },
+      {
+        type: "website",
+        label: "BizarreBounce",
+        url: "https://bizarre-bounce.remix.gg",
+      },
+      {
+        type: "website",
+        label: "Munchies Climb",
+        url: "https://munchies-climb.remix.gg",
+      },
+      {
+        type: "website",
+        label: "Head Crush",
+        url: "https://bizarrebeasts-head-crush.remix.gg",
+      },
+      {
+        type: "website",
+        label: "Memory Game",
+        url: "https://bizarrebeasts-memory-game.remix.gg",
+      },
+      {
+        type: "website",
+        label: "TicTacToe",
+        url: "https://bizarrebeasts-tictactoe.remix.gg",
+      },
+      {
+        type: "website",
+        label: "Checkers",
+        url: "https://bizarrebeasts-checkerz.remix.gg",
       },
     ],
   },

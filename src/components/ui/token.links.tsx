@@ -11,13 +11,27 @@ import {
   createZoraCoinLink,
   createEmpireBuilderCoinLink,
 } from "~/services/linker.service";
+import { useIsMiniApp } from "../farcaster/farcaster.hooks";
+import sdk from "@farcaster/miniapp-sdk";
 
 export const TokenLinks = ({
   token,
 }: {
-  token: { address?: string; type?: string };
+  token: { address?: string; type?: string; token?: string };
 }) => {
+  const [isMiniApp] = useIsMiniApp();
+
   const externalLinks = [
+    {
+      name: "Farcaster",
+      onClick: () => {
+        if (!token.token) return;
+        void sdk.actions.viewToken({ token: token.token });
+      },
+      icon: icons.farcaster,
+      hoverClass: "hover:!bg-zinc-500/20",
+      enabled: isMiniApp,
+    },
     {
       name: "Basescan",
       href: createExplorerAddressUrl({ address: token.address }),
@@ -75,6 +89,7 @@ export const TokenLinks = ({
             size="icon"
             className={`!rounded-full ${link.hoverClass}`}
             asChild
+            onClick={link.onClick}
           >
             <a href={link.href} target="_blank" rel="noopener noreferrer">
               <img

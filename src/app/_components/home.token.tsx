@@ -82,7 +82,7 @@ export const HomeToken = () => {
         </div>
 
         <div className="flex justify-end gap-2">
-          <TokenLinks token={{ address, type: "clanker" }} />
+          <TokenLinks token={{ address, type: "clanker", token }} />
         </div>
       </CardHeader>
 
@@ -99,7 +99,7 @@ export const HomeToken = () => {
           className="flex-1"
           onClick={() => {
             if (isInMiniApp) {
-              void sdk.actions.viewToken({ token });
+              void sdk.actions.swapToken({ buyToken: token });
             } else {
               void window.open(
                 `https://app.uniswap.org/explore/tokens/base/${address}`,
