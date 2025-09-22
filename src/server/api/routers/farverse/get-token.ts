@@ -2,8 +2,9 @@ import { createAssetUrl } from "~/services/image.service";
 import { publicProcedure } from "../../trpc";
 
 export const getToken = publicProcedure.query(async () => {
-  const address = "0x2EE6Ae6DC51715b286bD20c623573759F4A24b07";
-  const poolAddress = "0x8d74383e1FF239d74Db79339B626E37b60cb1692";
+  const address = "0xdFE23E2c07f8edF23ebA9c9a45E23303417C6B07";
+  const poolAddress =
+    "0x313a74e19d6572b5a911c3ece412228235f39ce21f57c7cea89fc01951642401";
   const token = `eip155:8453/erc20:${address}`;
 
   const priceData = await getPrice("base", address);

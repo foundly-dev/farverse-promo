@@ -40,16 +40,16 @@ export const partners: Partner[] = [
     image: "https://www.empirebuilder.world/EBblackjpg2.jpg",
     owners: [
       {
-        fid: 409857,
-        username: "yerbearserker",
-        avatar:
-          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2e2e66dd-30c0-4b05-5a05-163fc8dbec00/original",
-      },
-      {
         fid: 369863,
         username: "diviflyy",
         avatar:
           "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/68486cbd-1549-4c14-f092-bdcbcfc1d900/original",
+      },
+      {
+        fid: 409857,
+        username: "yerbearserker",
+        avatar:
+          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2e2e66dd-30c0-4b05-5a05-163fc8dbec00/original",
       },
     ],
     links: [
@@ -86,16 +86,16 @@ export const partners: Partner[] = [
       "https://proxy.wrpcd.net/?url=https%3A%2F%2Fworldofpangea.io%2Fimages%2Ficon.png&s=f14e531602bdca13113c50f85d39e537aa02d6f20d9cae39fe7d536c5587ac9a",
     owners: [
       {
-        fid: 409857,
-        username: "yerbearserker",
-        avatar:
-          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2e2e66dd-30c0-4b05-5a05-163fc8dbec00/original",
-      },
-      {
         fid: 1112538,
         username: "mikesmillerart",
         avatar:
           "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/00099246-fdec-4872-3b57-92769e88e600/original",
+      },
+      {
+        fid: 409857,
+        username: "yerbearserker",
+        avatar:
+          "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2e2e66dd-30c0-4b05-5a05-163fc8dbec00/original",
       },
     ],
     links: [
