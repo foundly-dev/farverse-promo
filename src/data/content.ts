@@ -169,10 +169,15 @@ export const socials: ContentItem[] = [
     screenshots: [],
     action: "Join the Empire",
     onClick: () => {
-      void window.open("https://www.empirebuilder.world/", "_blank");
+      void window.open(
+        "https://www.empirebuilder.world/empire/0xdFE23E2c07f8edF23ebA9c9a45E23303417C6B07",
+        "_blank",
+      );
     },
     onMiniAppClick: () => {
-      void sdk.actions.openUrl("https://www.empirebuilder.world/");
+      void sdk.actions.openUrl(
+        "https://www.empirebuilder.world/empire/0xdFE23E2c07f8edF23ebA9c9a45E23303417C6B07",
+      );
     },
   },
 ];
