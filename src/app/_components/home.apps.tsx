@@ -14,6 +14,7 @@ import { useIsMiniApp } from "~/components/farcaster/farcaster.hooks";
 import { cn } from "~/lib/utils";
 import { ExternalLink, Gamepad2 } from "lucide-react";
 import { icons } from "~/services/image.service";
+import { Docs } from "./home.docs";
 
 export const Apps = () => {
   return (
@@ -30,6 +31,8 @@ export const Apps = () => {
             <ContentItem key={item.title} item={item} />
           ))}
         </div>
+
+        <Docs className="mt-4 md:hidden" />
       </div>
       <div className="flex flex-col md:w-1/2">
         <h3 className="pt-4 pl-2 text-2xl font-bold md:pt-0">

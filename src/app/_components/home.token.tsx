@@ -33,7 +33,7 @@ export const HomeToken = () => {
   return (
     <Card
       className={cn(
-        "bg-card/10 mx-auto w-full max-w-sm gap-2 pt-5 pb-4 backdrop-blur-md",
+        "bg-card/10 mx-auto w-full gap-2 pt-5 pb-4 backdrop-blur-md md:max-w-sm",
       )}
     >
       <CardHeader className="px-5">

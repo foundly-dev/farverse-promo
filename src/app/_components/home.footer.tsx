@@ -17,7 +17,7 @@ export const Footer = () => {
   return (
     <footer className="w-full">
       <div className="mt-6 border-t pt-6">
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <ul className="-mx-3 -my-1 flex list-none justify-center">
             {legalLinks.map((link, i) => (
               <li key={i} className="mx-3 my-1 shrink-0">
@@ -30,7 +30,7 @@ export const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
         <div className="text-muted-foreground mt-6 justify-center text-center text-sm leading-6 whitespace-nowrap lg:col-[1/4] lg:row-[1/3] lg:mt-0">
           <div>{copyright.text}</div>
           {copyright.license && <div>{copyright.license}</div>}

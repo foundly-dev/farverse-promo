@@ -8,6 +8,7 @@ import { api, HydrateClient } from "~/trpc/server";
 import { Footer } from "../_components/home.footer";
 import { Apps } from "../_components/home.apps";
 import { Partners } from "../_components/home.partners";
+import { Docs } from "../_components/home.docs";
 
 export const dynamic = "force-dynamic";
 
@@ -22,13 +23,14 @@ export default async function Home() {
     >
       <HydrateClient>
         <HomeBackground />
-        <div className="flex max-w-sm flex-col items-center md:max-w-screen-lg">
+        <div className="flex max-w-md flex-col items-center md:max-w-screen-lg">
           <HomeBanner />
           <HomeToken />
           <Apps />
           <Partners />
           <Footer />
         </div>
+        <Docs className="absolute top-4 right-4 hidden md:block" />
       </HydrateClient>
     </main>
   );
