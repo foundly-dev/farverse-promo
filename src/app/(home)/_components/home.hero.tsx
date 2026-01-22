@@ -142,7 +142,7 @@ export const HomeHero = () => {
 
       {/* Footer */}
       <p className="absolute bottom-4 text-xs text-white/40">
-        &copy; 2025 Foundly Labs
+        &copy; 2026 Foundly Labs
       </p>
     </section>
   );
