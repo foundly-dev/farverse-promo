@@ -1,13 +1,14 @@
 import { createAssetUrl } from "~/services/image.service";
 import { publicProcedure } from "../../trpc";
 
+export const farvereAddress = "0xdFE23E2c07f8edF23ebA9c9a45E23303417C6B07";
+
 export const getToken = publicProcedure.query(async () => {
-  const address = "0xdFE23E2c07f8edF23ebA9c9a45E23303417C6B07";
   const poolAddress =
     "0x313a74e19d6572b5a911c3ece412228235f39ce21f57c7cea89fc01951642401";
-  const token = `eip155:8453/erc20:${address}`;
+  const token = `eip155:8453/erc20:${farvereAddress}`;
 
-  const priceData = await getPrice("base", address);
+  const priceData = await getPrice("base", farvereAddress);
 
   return {
     name: "Farverse",
@@ -18,7 +19,7 @@ export const getToken = publicProcedure.query(async () => {
     priceChange: priceData.priceChange,
     reserve: priceData.reserve,
     icon: createAssetUrl("/logos/farverse_512.png"),
-    address,
+    address: farvereAddress,
     poolAddress,
     token,
   };
