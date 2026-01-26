@@ -70,7 +70,14 @@ function Button({
       disabled={isLoading || isDisabled || props.disabled}
       {...props}
     >
-      {children}
+      {isLoading ? (
+        <>
+          <LoadingSpinner className="mr-2 size-4" />
+          {children}
+        </>
+      ) : (
+        children
+      )}
     </Comp>
   );
 }
