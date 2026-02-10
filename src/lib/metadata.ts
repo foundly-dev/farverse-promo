@@ -118,7 +118,7 @@ export const createMetadata = (config: {
           action: {
             type: "launch_frame",
             name: "Farverse",
-            url: "https://breakdown-depth-sustainable-railway.trycloudflare.com",
+            url: createLiveUrl("/"),
             splashImageUrl: defaultSplashImage,
             splashBackgroundColor: defaultColor,
           },
