@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useToken } from "~/app/_components/home.hooks";
 import { useIsMiniApp } from "~/components/farcaster/farcaster.hooks";
 import { Button } from "~/components/ui/button";
-import { formatSmallPrice } from "~/lib/format";
+import { formatSmallPrice, formatMarketCap } from "~/lib/format";
 import { cn } from "~/lib/utils";
 import {
   createUniswapCoinLink,
@@ -17,10 +17,18 @@ import {
 const COINGECKO_URL = "https://www.coingecko.com/en/coins/farverse";
 
 export const LanderTokenTicker = () => {
-  const [{ icon, symbol, price, priceChange, address, token }] = useToken();
+  const [{ icon, symbol, price, priceChange, marketCap, address, token }] =
+    useToken();
   const [isMiniApp] = useIsMiniApp();
   const [open, setOpen] = useState(false);
+  const [showPrice, setShowPrice] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
+
+  // Toggle between price and market cap every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => setShowPrice((prev) => !prev), 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Close on outside click
   useEffect(() => {
@@ -70,9 +78,18 @@ export const LanderTokenTicker = () => {
           height={20}
           className="h-5 w-5 rounded-full object-cover"
         />
-        <span className="text-sm font-medium text-white">
-          {formatSmallPrice(price)}
-        </span>
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={showPrice ? "price" : "mc"}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="text-sm font-medium text-white"
+          >
+            {showPrice ? formatSmallPrice(price) : formatMarketCap(marketCap)}
+          </motion.span>
+        </AnimatePresence>
         <span
           className={cn(
             "text-xs font-medium",
