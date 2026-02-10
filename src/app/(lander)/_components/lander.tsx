@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import { apps } from "~/data/content";
 import { useLanderStore } from "~/stores/lander.store";
@@ -70,9 +71,18 @@ export const Lander = () => {
           <LanderCenterContent />
         </motion.div>
 
-        <motion.div variants={fadeIn} className="pb-4 md:pb-6">
+        <motion.div variants={fadeIn}>
           <LanderGreeting />
           <LanderAppSelector />
+          <a
+            href="https://foundly.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-1 pt-3 text-xs text-white/80 transition-colors hover:text-white"
+          >
+            Built with <Heart className="h-3 w-3 fill-current" /> by Foundly
+            Labs
+          </a>
         </motion.div>
       </motion.div>
     </main>
