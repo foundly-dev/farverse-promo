@@ -7,7 +7,9 @@ export const defaultDescription =
   "An onchain gaming universe. Built on Farcaster.";
 export const defaultSubtitle = "Enter the Farverse";
 export const defaultImagePath = createAssetUrl("/preview.png");
-export const defaultEmbedImage = createAssetUrl("/embed.png");
+// export const defaultEmbedImage = createAssetUrl("/embed_new.png");
+export const defaultEmbedImage =
+  "https://74wu1jjx12.ufs.sh/f/02iGwo7zxGEWkZY4nTKsbDmVr7U6GuwJvItMhYjLglSx3Ziy";
 export const defaultIconPath = farverseLogoImage("256");
 export const defaultSplashImage = farverseLogoImage("transparent");
 export const defaultImageAlt = "Farverse";
