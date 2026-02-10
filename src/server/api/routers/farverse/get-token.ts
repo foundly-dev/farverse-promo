@@ -7,7 +7,13 @@ export const getToken = publicProcedure.query(async () => {
     "0x313a74e19d6572b5a911c3ece412228235f39ce21f57c7cea89fc01951642401";
   const token = `eip155:8453/erc20:${address}`;
 
-  const priceData = await getPrice("base", address);
+  const priceData = await getPrice("base", address).catch(() => ({
+    price: 0,
+    marketCap: 0,
+    volume: 0,
+    priceChange: 0,
+    reserve: 0,
+  }));
 
   return {
     name: "Farverse",
@@ -58,6 +64,7 @@ const getPrice = async (
 
   const response = await fetch(
     `https://api.geckoterminal.com/api/v2/simple/networks/${network}/token_price/${address}?${query.toString()}`,
+    { next: { revalidate: 300 } },
   );
 
   if (!response.ok) {

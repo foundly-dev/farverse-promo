@@ -78,27 +78,35 @@ export const LanderTokenTicker = () => {
           height={20}
           className="h-5 w-5 rounded-full object-cover"
         />
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={showPrice ? "price" : "mc"}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.3 }}
-            className="text-sm font-medium text-white"
-          >
-            {showPrice ? formatSmallPrice(price) : formatMarketCap(marketCap)}
-          </motion.span>
-        </AnimatePresence>
-        <span
-          className={cn(
-            "text-xs font-medium",
-            priceChange >= 0 ? "text-lime-400" : "text-rose-400",
-          )}
-        >
-          {priceChange >= 0 ? "+" : ""}
-          {priceChange.toFixed(2)}%
-        </span>
+        {price > 0 ? (
+          <>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={showPrice ? "price" : "mc"}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.3 }}
+                className="text-sm font-medium text-white"
+              >
+                {showPrice
+                  ? formatSmallPrice(price)
+                  : formatMarketCap(marketCap)}
+              </motion.span>
+            </AnimatePresence>
+            <span
+              className={cn(
+                "text-xs font-medium",
+                priceChange >= 0 ? "text-lime-400" : "text-rose-400",
+              )}
+            >
+              {priceChange >= 0 ? "+" : ""}
+              {priceChange.toFixed(2)}%
+            </span>
+          </>
+        ) : (
+          <span className="text-sm font-medium text-white">{symbol}</span>
+        )}
       </button>
 
       <AnimatePresence>

@@ -11,14 +11,15 @@ export const defaultImagePath = createAssetUrl("/preview.png");
 export const defaultEmbedImage =
   "https://74wu1jjx12.ufs.sh/f/02iGwo7zxGEWkZY4nTKsbDmVr7U6GuwJvItMhYjLglSx3Ziy";
 export const defaultIconPath = farverseLogoImage("256");
-export const defaultSplashImage = farverseLogoImage("transparent");
+export const defaultSplashImage =
+  "https://fonts.gstatic.com/s/e/notoemoji/latest/1f47e/512.gif";
 export const defaultImageAlt = "Farverse";
 export const defaultCanonicalUrl = defaultUrl;
 export const defaultKeywords = ["Farverse", "games", "farpets", "democracy"];
 export const defaultTwitterCreator = "@0xmfbevan";
 export const defaultPublisher = "Farverse";
 export const defaultApplicationName = "Farverse";
-export const defaultColor = "#1d0d28";
+export const defaultColor = "#1e1b4b";
 
 export const createMetadata = (config: {
   title?: string;
@@ -117,7 +118,7 @@ export const createMetadata = (config: {
           action: {
             type: "launch_frame",
             name: "Farverse",
-            url: defaultCanonicalUrl,
+            url: "https://breakdown-depth-sustainable-railway.trycloudflare.com",
             splashImageUrl: defaultSplashImage,
             splashBackgroundColor: defaultColor,
           },
