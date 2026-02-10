@@ -1,56 +1,78 @@
 import sdk from "@farcaster/miniapp-sdk";
+import type { PlayOnType } from "~/app/_components/home.play-on";
 import { farverseLogoImage } from "~/lib/url";
 import { createAssetUrl } from "~/services/image.service";
+
+export interface PlayOnConfig {
+  type: PlayOnType;
+  url: string;
+  isComingSoon?: boolean;
+  browserOnly?: boolean;
+}
 
 export interface ContentItem {
   title: string;
   subtitle: string;
   description: string;
-  image: string;
-  stats?: { label: string; value: string }[];
+  image?: string;
   screenshots?: string[];
-  action: string;
-  onClick: () => void;
-  onMiniAppClick: () => void;
+  background?: string;
+  playOn?: PlayOnConfig[];
+  miniAppUrl?: string;
+  onClick?: () => void;
 }
 
 export const apps: ContentItem[] = [
+  {
+    title: "Farverse",
+    subtitle: "Welcome to the Farverse",
+    description:
+      "An interconnected universe of onchain and online games built on Farcaster and Base. Explore, compete, and earn across multiple worlds — each game is connected through shared lore, tokens, and rewards.",
+    image: farverseLogoImage("256"),
+    background: createAssetUrl("/fv_bg.png"),
+  },
+  {
+    title: "Warptown",
+    subtitle: "A Pixel RPG",
+    description:
+      "Somewhere deep in the Farverse is an island. At the center of that island is a town. That town is Warptown: a safe haven where friends meet, travellers trade and adventurers prepare for their journeys to the far reaches of the world.",
+    image: "https://cdn.warptown.com/app/logo_256.png",
+    background: "/warptown_bg.jpeg",
+    playOn: [
+      {
+        type: "farcaster",
+        url: "https://farcaster.xyz/miniapps/yzTCzYrtW8z9/warptown",
+      },
+      {
+        type: "base",
+        url: "https://base.app/app/https:/warptown.com",
+      },
+      {
+        type: "chrome",
+        url: "https://warptown.com",
+        browserOnly: true,
+      },
+    ],
+    miniAppUrl: "https://warptown.com",
+  },
   {
     title: "Slay to Earn",
     subtitle: "Slay Enemies. Earn Rewards.",
     description:
       "An onchain enemy slaying game, set in the Farverse. Collect items, slay enemies, and earn rewards instantly.",
     image: "https://assets.foundly.dev/slay/logo/logo_256.png",
-    stats: [
+    background: "/slay_bg.jpeg",
+    playOn: [
       {
-        label: "Players",
-        value: "3K+",
+        type: "farcaster",
+        url: "https://farcaster.xyz/miniapps/LKH4wBsF1zYm/slay-to-earn",
       },
       {
-        label: "Rewards",
-        value: "$$$",
-      },
-      {
-        label: "Peak Trending",
-        value: "#9",
+        type: "base",
+        url: "https://base.app/app/https:/slay.farverse.games",
       },
     ],
-    screenshots: [
-      createAssetUrl("/screenshots/slay_1.png"),
-      createAssetUrl("/screenshots/slay_2.png"),
-      createAssetUrl("/screenshots/slay_3.png"),
-      createAssetUrl("/screenshots/slay_4.png"),
-    ],
-    action: "Play Now",
-    onClick: () => {
-      void window.open(
-        "https://farcaster.xyz/miniapps/LKH4wBsF1zYm/slay-to-earn",
-        "_blank",
-      );
-    },
-    onMiniAppClick: () => {
-      void sdk.actions.openMiniApp({ url: "https://slay.farverse.games" });
-    },
+    miniAppUrl: "https://slay.farverse.games",
   },
   {
     title: "FarPets",
@@ -58,121 +80,40 @@ export const apps: ContentItem[] = [
     description:
       "A collectible pets game. Mint yourself a Warp Egg and hatch it into one of 48 unique Farpets. Come back every day to care for your pet, and bring them along with you to other Farverse games.",
     image: "https://farpets.com/logo/logo_256.png",
-    stats: [
+    background: "/farpets_bg.jpeg",
+    playOn: [
       {
-        label: "Players",
-        value: "3.8K+",
+        type: "farcaster",
+        url: "https://farcaster.xyz/miniapps/PxBmrtUbCGLI/farpets",
       },
-      {
-        label: "FarPets",
-        value: "11K+",
-      },
-      {
-        label: "Peak Trending",
-        value: "#2",
-      },
+      { type: "base", url: "https://base.app/app/https:/farpets.com" },
     ],
-    screenshots: [
-      createAssetUrl("/screenshots/farpets_1.png"),
-      createAssetUrl("/screenshots/farpets_2.png"),
-      createAssetUrl("/screenshots/farpets_3.png"),
-      createAssetUrl("/screenshots/farpets_4.png"),
-    ],
-    action: "Play Now",
-    onClick: () => {
-      void window.open(
-        "https://farcaster.xyz/miniapps/PxBmrtUbCGLI/farpets",
-        "_blank",
-      );
-    },
-    onMiniAppClick: () => {
-      void sdk.actions.openMiniApp({ url: "https://farpets.com" });
-    },
+    miniAppUrl: "https://farpets.com",
   },
   {
-    title: "Democracy",
-    subtitle: "Vox Populi. Vox Machinae.",
+    title: "Warplets",
+    subtitle: "The (Un)official Warplets Game",
     description:
-      "An onchain strategy simulation game. Become a citizen, vote on policies proposed by agentic leaders, and navigate dynamic world events. Become the most democractic country in the world!",
-    image: "https://assets.foundly.dev/democracy/logo/logo_256.png",
-    stats: [
+      "The Warplets is an NFT Collection by the legendary @sayangel. This is an unofficial game built on the collection including Warplet feeding and Baby Warplette breeding.",
+    image: "https://assets.foundly.dev/warplets/logos/warplets_256.png",
+    background: "https://assets.foundly.dev/warplets/portal.jpeg",
+    playOn: [
       {
-        label: "Players",
-        value: "300+",
+        type: "farcaster",
+        url: "https://farcaster.xyz/miniapps/KH-o4UEKbdpz/warplets",
       },
       {
-        label: "Democracies",
-        value: "15",
-      },
-      {
-        label: "Peak Trending",
-        value: "#10",
+        type: "base",
+        url: "https://base.app/app/https:/warplets.farverse.games",
       },
     ],
-    screenshots: [
-      createAssetUrl("/screenshots/democracy_1.png"),
-      createAssetUrl("/screenshots/democracy_2.png"),
-      createAssetUrl("/screenshots/democracy_3.png"),
-      createAssetUrl("/screenshots/democracy_4.png"),
-    ],
-    action: "Play Now",
-    onClick: () => {
-      void window.open(
-        "https://farcaster.xyz/miniapps/EQTEopy6Rl8l/democracy",
-        "_blank",
-      );
-    },
-    onMiniAppClick: () => {
-      void sdk.actions.openMiniApp({ url: "https://democracyga.me" });
-    },
-  },
-];
-
-export const socials: ContentItem[] = [
-  {
-    title: "mfbevan.eth",
-    subtitle: "Developer",
-    description:
-      "Solo developer currently building the Farverse and its many games.",
-    image: "https://i.imgur.com/4kjhzdW.jpg",
-    screenshots: [],
-    action: "View Profile",
-    onClick: () => {
-      void window.open("https://farcaster.xyz/~/mfbevan", "_blank");
-    },
-    onMiniAppClick: () => {
-      void sdk.actions.viewProfile({ fid: 385651 });
-    },
-  },
-
-  {
-    title: "/farverse",
-    subtitle: "Farcaster Channel",
-    description:
-      "The official Farverse channel on Farcaster. Follow to stay in the loop for the latest news and updates.",
-    image: farverseLogoImage("256"),
-    screenshots: [],
-    action: "View Channel",
-    onClick: () => {
-      void window.open("https://farcaster.xyz/~/channel/farverse", "_blank");
-    },
-    onMiniAppClick: () => {
-      void sdk.actions.openUrl("https://farcaster.xyz/~/channel/farverse");
-    },
+    miniAppUrl: "https://warplets.farverse.games",
   },
   {
-    title: "Empire",
-    subtitle: "Farverse Empire",
+    title: "More Coming Soon",
+    subtitle: "The Farverse is expanding",
     description:
-      "Join the Farverse Empire in Empire Builder to see where you rank on the Farverse leaderboards, and earn rewards for your contributions.",
-    image: "https://www.empirebuilder.world/EBblackjpg2.jpg",
-    screenshots: [],
-    action: "Join the Empire",
-    onClick: () => {
-      void window.open("https://www.empirebuilder.world/", "_blank");
-    },
-    onMiniAppClick: () => {
-      void sdk.actions.openUrl("https://www.empirebuilder.world/");
-    },
+      "We have multiple new mini apps and games currently in development. Stay tuned for new additions to the Farverse universe.",
+    background: createAssetUrl("/fv_bg.png"),
   },
 ];
