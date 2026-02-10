@@ -24,7 +24,7 @@ export const LanderAppSelector = () => {
               setSelectedIndex(index);
             }}
             className={cn(
-              "flex cursor-pointer items-center overflow-hidden rounded-lg border border-white/10 bg-black/20 backdrop-blur-md transition-colors duration-200 last:pr-2 md:gap-2.5 md:rounded-xl md:p-2 md:pr-4",
+              "flex cursor-pointer items-center overflow-hidden rounded-lg border border-white/10 bg-black/20 backdrop-blur-md transition-colors duration-200 md:gap-2.5 md:rounded-xl md:p-2 md:pr-4 last:md:pr-2",
               isSelected
                 ? "border-white/20 bg-black/30"
                 : "opacity-60 hover:opacity-80",
