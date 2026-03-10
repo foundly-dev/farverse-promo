@@ -32,29 +32,53 @@ export const apps: ContentItem[] = [
     background: createAssetUrl("/fv_bg.png"),
   },
   {
-    title: "Warptown",
-    subtitle: "A Pixel RPG",
+    title: "Monverse",
+    subtitle: "Collect & Battle Monsters",
     description:
-      "Somewhere deep in the Farverse is an island. At the center of that island is a town. That town is Warptown: a safe haven where friends meet, travellers trade and adventurers prepare for their journeys to the far reaches of the world.",
-    image: "https://cdn.warptown.com/app/logo_256.png",
-    background: "/warptown_bg.jpeg",
+      "Collect and over 150 unique monsters in an unlimited and increasingly difficult battle arena.",
+    image: "https://assets.foundly.dev/monsters/logo_inverse_512.png",
+    background: "https://assets.foundly.dev/monsters/backgrounds/plant.jpeg",
     playOn: [
       {
         type: "farcaster",
-        url: "https://farcaster.xyz/miniapps/yzTCzYrtW8z9/warptown",
+        url: "https://farcaster.xyz/miniapps/NerGp3dXPSUA/monverse",
       },
       {
         type: "base",
-        url: "https://base.app/app/https:/warptown.com",
+        url: "https://base.app/app/https://monverse.farverse.games",
       },
       {
         type: "chrome",
-        url: "https://warptown.com",
+        url: "https://monverse.farverse.games",
         browserOnly: true,
       },
     ],
-    miniAppUrl: "https://warptown.com",
+    miniAppUrl: "https://monverse.farverse.games",
   },
+  // {
+  //   title: "Warptown",
+  //   subtitle: "A Pixel RPG",
+  //   description:
+  //     "Somewhere deep in the Farverse is an island. At the center of that island is a town. That town is Warptown: a safe haven where friends meet, travellers trade and adventurers prepare for their journeys to the far reaches of the world.",
+  //   image: "https://cdn.warptown.com/app/logo_256.png",
+  //   background: "/warptown_bg.jpeg",
+  //   playOn: [
+  //     {
+  //       type: "farcaster",
+  //       url: "https://farcaster.xyz/miniapps/yzTCzYrtW8z9/warptown",
+  //     },
+  //     {
+  //       type: "base",
+  //       url: "https://base.app/app/https:/warptown.com",
+  //     },
+  //     {
+  //       type: "chrome",
+  //       url: "https://warptown.com",
+  //       browserOnly: true,
+  //     },
+  //   ],
+  //   miniAppUrl: "https://warptown.com",
+  // },
   {
     title: "Slay to Earn",
     subtitle: "Slay Enemies. Earn Rewards.",
