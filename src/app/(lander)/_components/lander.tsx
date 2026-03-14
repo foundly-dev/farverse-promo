@@ -11,6 +11,7 @@ import { LanderSocialLinks } from "./lander.social-links";
 import { LanderCenterContent } from "./lander.center-content";
 import { LanderAppSelector } from "./lander.app-selector";
 import { LanderGreeting } from "./lander.greeting";
+import { LanderGamesHubBanner } from "./lander.games-hub-banner";
 
 const stagger = {
   hidden: { opacity: 0 },
@@ -72,6 +73,7 @@ export const Lander = () => {
         </motion.div>
 
         <motion.div variants={fadeIn}>
+          <LanderGamesHubBanner />
           <LanderGreeting />
           <LanderAppSelector />
           <a
