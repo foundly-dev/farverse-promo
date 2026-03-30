@@ -124,6 +124,7 @@ export const createMetadata = (config: {
           },
         },
       }),
+      "base:app_id": "69c9b65e0e56240fea198ec6",
     },
   };
 };
